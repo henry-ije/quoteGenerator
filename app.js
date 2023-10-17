@@ -6,7 +6,7 @@
  const quotes =  [
     {
         quotes:"I’m not a great programmer; I’m just a good programmer with great habits.",
-        person:"Kent Beck"
+        person:"Kent Beck",
     },
     {
         quotes:"Good programmers know what to write. Great ones know what to rewrite and reuse",
@@ -45,8 +45,14 @@
     },
  ]
 
- btn.addEventListener("click", function(){
-    let random = Math.floor(Math.random() * quotes.length)
-    quote.innerHTML = quotes[random].quotes;
-    person.innerHTML = quotes[random].person;
- })
+//  btn.addEventListener("click", function(){
+//     let random = Math.floor(Math.random() * quotes.length)
+//     quote.innerHTML = quotes[random].quotes;
+//     person.innerHTML = quotes[random].person;
+//  })
+
+ btn.addEventListener("click", function () {
+    const { quotes: randomQuote, person: randomPerson } = quotes[Math.floor(Math.random() * quotes.length)];
+    quote.textContent = randomQuote;
+    person.textContent = randomPerson;
+});
